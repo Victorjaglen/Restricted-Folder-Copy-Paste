@@ -41,3 +41,25 @@ Installation
         python app.py
 
         The script will now monitor the specified root folder and intercept any unauthorized copy-paste actions involving files from this folder.
+
+
+Code Structure
+
+The project is divided into key components:
+
+    - Clipboard Monitoring: Uses a library like `pyperclip` to monitor clipboard for file paths being copied or pasted.
+    - File System Monitoring: Listens for file operations (copy/move) using libraries like `watchdog`.
+    - Configuration and Restrictions: Defines the root folder and restricts file transfers.
+    - Logging and Error Handling: Logs violations and handles errors gracefully.
+
+Safety Considerations
+
+    - Access Permissions: Ensures the system has the right access levels to monitor and enforce restrictions without violating privacy.
+    - Preventing False Positives: Ensures legitimate file operations aren't blocked unintentionally.
+    - Error Handling: Manages errors and shows helpful messages to users.
+    - Security Concerns: Implements measures to avoid system-level vulnerabilities.
+    - Data Privacy: Ensures sensitive clipboard data is not inadvertently tracked.
+
+Suitability of Python
+
+    Python is chosen due to its simplicity, wide range of libraries for system monitoring, cross-platform support, and ease of development and debugging.
