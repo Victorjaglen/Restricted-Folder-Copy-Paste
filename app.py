@@ -17,7 +17,7 @@ class ClipboardMonitor:
             pyperclip.copy('')
 
     def is_restricted_content(self, content):
-        # Check if the clipboard content is a path inside the root directory
+        # Checking if the clipboard content is a path inside the root directory
         return content.startswith(self.root_folder)
 
 
@@ -27,7 +27,7 @@ class RestrictFolderHandler(FileSystemEventHandler):
         self.clipboard_monitor = ClipboardMonitor(root_folder)
 
     def on_modified(self, event):
-        # Trigger clipboard check when any modification is detected
+        # Trigger clipboard checking when any modification is detected
         self.clipboard_monitor.check_clipboard()
 
 
